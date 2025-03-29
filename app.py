@@ -90,6 +90,11 @@ def run(input_path, weights_path, device):
     vutils.save_image(out_img, output_file, normalize=False)
     return output_file
 
+
+@app.route('/')
+def home():
+    return "Flask App is Running"
+
 @app.route("/predict", methods=["POST"])
 def predict():
     if "file" not in request.files:
